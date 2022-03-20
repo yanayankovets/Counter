@@ -1,0 +1,37 @@
+body {
+    margin: 0 50px;
+    width: 1200px;
+    font-family: Fredoka, sans-serif;
+    counter-reset: section;
+    background-color:  #f0efef;
+}
+
+h2 {
+    counter-reset: subsection;
+}
+
+h2:not(.no_list)::before {
+    content: "Часть " counter(section) ". ";
+    counter-increment: section;
+}
+
+h3::before {
+    content: "Глава " counter(subsection) ". ";
+    counter-increment: subsection;
+}
+
+.appendix__item::before {
+    content: "Приложение " counter(subsection) ". ";
+    counter-increment: subsection;
+}
+
+h3 { font-weight: normal;}
+
+h1{margin-left: 30px;}
+
+p {margin-left: 150px; padding-bottom: 20px; font-style: italic}
+
+.head {
+    margin-left: 125px;
+    padding-bottom: 10px;
+}
